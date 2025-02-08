@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7j62ku56wql7"]
+
+[ext_resource type="Texture2D" uid="uid://broupbo38kmlg" path="res://IMAGES/BALLS/newerBalls/ExpandedPuffer.png" id="1_3qqon"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1h6bn"]
+friction = 4.0
+bounce = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k1vum"]
+radius = 88.278
+
+[node name="ExpandedBall" type="RigidBody2D"]
+z_index = 2
+z_as_relative = false
+position = Vector2(-5000, 2.08165e-12)
+physics_material_override = SubResource("PhysicsMaterial_1h6bn")
+
+[node name="Expanded8Ball" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+texture_filter = 1
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("CircleShape2D_k1vum")
+
+[node name="ExpandedBall" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(5, 5)
+texture = ExtResource("1_3qqon")

@@ -1,0 +1,224 @@
+[gd_scene load_steps=22 format=3 uid="uid://bdrus5ham37hu"]
+
+[ext_resource type="Texture2D" uid="uid://kjq77gohnfh3" path="res://IMAGES/table/testing stuff/botLayer/IMG_2032.png" id="6_7m1pj"]
+[ext_resource type="Script" path="res://scenes/table.gd" id="6_cs025"]
+[ext_resource type="Script" path="res://scenes/SHARK.gd" id="7_61em5"]
+[ext_resource type="Texture2D" uid="uid://bslvw3f6a074w" path="res://IMAGES/table/testing stuff/botLayer/IMG_2034.png" id="7_qbq5v"]
+[ext_resource type="Texture2D" uid="uid://cd8thyxrxqwmm" path="res://IMAGES/table/testing stuff/topLayer/IMG_2033.png" id="8_ekw0r"]
+[ext_resource type="Texture2D" uid="uid://bnju8jpj2wlx0" path="res://IMAGES/table/testing stuff/botLayer/IMG_2036.png" id="8_uf7tx"]
+[ext_resource type="Texture2D" uid="uid://cmalfkb71ktx1" path="res://IMAGES/table/testing stuff/topLayer/IMG_2035.png" id="9_e3sk8"]
+[ext_resource type="Texture2D" uid="uid://cyoma0y12xev2" path="res://IMAGES/table/testing stuff/botLayer/IMG_2038.png" id="9_lq1lh"]
+[ext_resource type="Texture2D" uid="uid://10x6laajadwm" path="res://IMAGES/table/testing stuff/botLayer/IMG_2040.png" id="10_5slxq"]
+[ext_resource type="Texture2D" uid="uid://hc2um2awup8b" path="res://IMAGES/table/testing stuff/topLayer/IMG_2039.png" id="10_qcj0c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hqy0"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"OtherLayerIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7m1pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qbq5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uf7tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lq1lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5slxq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uo32"]
+size = Vector2(350.117, 405.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx5yn"]
+size = Vector2(20, 183.627)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efuka"]
+size = Vector2(431.081, 244.473)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey3hx"]
+size = Vector2(721.906, 469.467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnfe4"]
+size = Vector2(392.047, 408.96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwomv"]
+size = Vector2(28.7, 227.9)
+
+[sub_resource type="Curve2D" id="Curve2D_0sb0j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -172.754, 459.771, 0, 0, 0, 0, -167.484, 357.28, 0, 0, 0, 0, -142.4, 177.1, 0, 0, 0, 0, -65.6, 74.4333, 0, 0, 0, 0, 48.1827, 32.0113, 0, 0, 0, 0, 189.362, 77.8641, 0, 0, 0, 0, 327.943, 96.4919, 0, 0, 0, 0, 487.311, 83.5958, 0, 0, 0, 0, 626.758, 23.4139, 0, 0, 0, 0, 731.56, -0.945435, 0, 0, 0, 0, 889.196, -6.67706, 0, 0, 0, 0, 997.462, 14.8165, 0, 0, 0, 0, 1079.74, 90.7603, 0, 0, 0, 0, 1137.78, 211.124, 0, 0, 0, 0, 1172.42, 272.739, 0, 0, 0, 0, 1181.08, 325.756, 0, 0, 0, 0, 1194.94, 391.67, 0, 0, 0, 0, 1204.47, 560.752, 0, 0, 0, 0, 1162.03, 704.042, 0, 0, 0, 0, 1123.92, 811.51, 0, 0, 0, 0, 1050.3, 888.886, 0, 0, 0, 0, 957.62, 924.709, 0, 0, 0, 0, 842.425, 917.544, 0, 0, 0, 0, 757.544, 917.544, 0, 0, 0, 0, 683.057, 886.021, 0, 0, 0, 0, 586.916, 874.557, 0, 0, 0, 0, 485.579, 868.826, 0, 0, 0, 0, 378.179, 868.826, 0, 0, 0, 0, 221.409, 906.081, 0, 0, 0, 0, 107.2, 893.2, 0, 0, 0, 0, -21.1077, 863.094, 0, 0, 0, 0, -94.7289, 765.657, 0, 0, 0, 0, -147.282, 695.259, 0, 0, 0, 0, -166.606, 621.291, 0, 0, 0, 0, -170.119, 574.496, 0, 0, 0, 0, -172.754, 459.771)
+}
+point_count = 36
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_km0wc"]
+bounce = 0.18
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e82f"]
+size = Vector2(155.833, 28.6077)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_adidj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ekw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e3sk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qcj0c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Table" type="AnimatedSprite2D"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+position = Vector2(481, 317)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_7hqy0")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+script = ExtResource("6_cs025")
+
+[node name="cushions" type="StaticBody2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+z_as_relative = false
+position = Vector2(441.395, 267.493)
+
+[node name="RailBorder3" type="CollisionPolygon2D" parent="cushions"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-342.728, -0.159683)
+scale = Vector2(0.00758397, 0.0102722)
+polygon = PackedVector2Array(14196.6, -5646.31, 14240.6, -3699.3, 13713.2, 5062.21, -9889.28, 5256.91, -10416.7, -4250.95, -8746.52, -5613.86)
+
+[node name="RailBorder1" type="CollisionPolygon2D" parent="cushions"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-323.062, -350.493)
+rotation = -0.0121877
+scale = Vector2(0.00740249, 0.0197904)
+polygon = PackedVector2Array(-13221.8, 3594.96, -13733, 4081.12, -11782, 5016.46, 12216.6, 5142.71, 12381.3, 4233.86, 12602.4, -5315.92, -12792.6, -5431.69)
+
+[node name="RailBorder2" type="CollisionPolygon2D" parent="cushions"]
+position = Vector2(-69.7283, -374.826)
+rotation = 3.14159
+scale = Vector2(0.0183394, -0.0599835)
+polygon = PackedVector2Array(7197.63, 1783.82, 7106.75, 2078.34, -2544.59, 2078.35, -3253.45, 1833.84, -3053.54, -1339.25, 6870.44, -1378.16)
+
+[node name="RailBorder4" type="CollisionPolygon2D" parent="cushions"]
+position = Vector2(-109.728, -40.1597)
+scale = Vector2(0.00643027, 0.00689284)
+polygon = PackedVector2Array(-13892.6, -2563.04, -13944.5, 48.3594, -13374.2, 4739.22, -13581.6, 13830.8, 15966.2, 13830.8, 15914.3, 145.078, 13115.1, -2563.04)
+
+[node name="RailBorder5" type="CollisionPolygon2D" parent="cushions"]
+position = Vector2(81.9384, -158.826)
+scale = Vector2(0.00991433, 0.0294203)
+polygon = PackedVector2Array(-8909.67, -2515.27, -6556.17, -2877.83, 16609, -2798.52, 16676.2, 3217.73, -7632.05, 3331.03, -8876.04, 2934.48)
+
+[node name="RailBorder6" type="CollisionPolygon2D" parent="cushions"]
+position = Vector2(-635.728, -149.493)
+scale = Vector2(0.0128409, 0.0195942)
+polygon = PackedVector2Array(16172.3, 3946.76, 13264.9, 4321.01, -14510.9, 2109.47, -15159.9, -4984.48, 15211.8, -5018.5, 16431.9, -4167.91, 16457.8, 3895.72)
+
+[node name="Pockets" type="Area2D" parent="."]
+z_index = 2
+
+[node name="TopRight" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(610.333, -184.667)
+shape = SubResource("RectangleShape2D_8uo32")
+
+[node name="TopMiddle" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(223.333, -92.4802)
+shape = SubResource("RectangleShape2D_qx5yn")
+
+[node name="TopLeft" type="CollisionShape2D" parent="Pockets"]
+z_index = 1
+position = Vector2(-200.333, -105.667)
+shape = SubResource("RectangleShape2D_efuka")
+
+[node name="BottomLeft" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(-344.286, 442.067)
+shape = SubResource("RectangleShape2D_ey3hx")
+
+[node name="BottomMiddle" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(633.333, 411.667)
+shape = SubResource("RectangleShape2D_nnfe4")
+
+[node name="TEster" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(225.75, 331.85)
+shape = SubResource("RectangleShape2D_iwomv")
+
+[node name="TopRight2" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(1220.67, -369.334)
+shape = SubResource("RectangleShape2D_8uo32")
+
+[node name="SHARK" type="Node" parent="."]
+script = ExtResource("7_61em5")
+
+[node name="Path2D" type="Path2D" parent="SHARK"]
+z_index = 1
+z_as_relative = false
+position = Vector2(1069, 598)
+scale = Vector2(1.13852, 0.662454)
+curve = SubResource("Curve2D_0sb0j")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SHARK/Path2D"]
+z_index = 1
+z_as_relative = false
+position = Vector2(1197.67, 440.088)
+rotation = 1.51449
+progress = 1995.8
+
+[node name="SharkSprite" type="Sprite2D" parent="SHARK/Path2D/PathFollow2D"]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+position = Vector2(-22.6462, -6.11981)
+rotation = -3.14159
+scale = Vector2(4.21616, 5.58501)
+
+[node name="Fin" type="AnimatableBody2D" parent="SHARK/Path2D/PathFollow2D"]
+z_index = 2
+z_as_relative = false
+position = Vector2(-4.33922e-05, -1.56164e-05)
+physics_material_override = SubResource("PhysicsMaterial_km0wc")
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SHARK/Path2D/PathFollow2D/Fin"]
+z_index = 1
+z_as_relative = false
+position = Vector2(8.30402, -0.786368)
+shape = SubResource("RectangleShape2D_0e82f")
+
+[node name="TopLayerTable" type="AnimatedSprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+position = Vector2(226.75, 115.4)
+scale = Vector2(0.999338, 1.00526)
+sprite_frames = SubResource("SpriteFrames_adidj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.964564

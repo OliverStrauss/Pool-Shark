@@ -1,0 +1,164 @@
+[gd_scene load_steps=21 format=3 uid="uid://bsky3uqqvdwh8"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_3ajbx"]
+[ext_resource type="PackedScene" uid="uid://bdrus5ham37hu" path="res://scenes/table.tscn" id="1_sygpi"]
+[ext_resource type="PackedScene" uid="uid://d1osoibj01qu1" path="res://scenes/pool_ball.tscn" id="2_l70v6"]
+[ext_resource type="PackedScene" uid="uid://c7j62ku56wql7" path="res://scenes/expanded_ball.tscn" id="3_bstip"]
+[ext_resource type="Texture2D" uid="uid://bten5lyb2hh3y" path="res://IMAGES/BallWells/NewBallWell.png" id="4_uabbj"]
+[ext_resource type="PackedScene" uid="uid://ccp2vyt7mw4qa" path="res://scenes/cue.tscn" id="4_v43l0"]
+[ext_resource type="PackedScene" uid="uid://dur34fjnvru4o" path="res://scenes/PowerSlide.tscn" id="5_4dt66"]
+[ext_resource type="Script" path="res://scenes/RichTextLabel.gd" id="5_k2qs3"]
+[ext_resource type="Script" path="res://scenes/GuidingLine.gd" id="6_gkdx0"]
+[ext_resource type="Texture2D" uid="uid://c0b4raryl2mxh" path="res://IMAGES/BALLS/newerBalls/AimingBall.png" id="9_yorn8"]
+[ext_resource type="Texture2D" uid="uid://bju6xasy3ltm3" path="res://IMAGES/BACKROUND/IMG_2018.jpeg" id="10_sxed4"]
+
+[sub_resource type="Theme" id="Theme_6wp42"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk6cr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcpgm"]
+bg_color = Color(0.427451, 0.678431, 0.321569, 1)
+
+[sub_resource type="Theme" id="Theme_jcvxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0tm8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tge5m"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.25, 0.25, 0.25, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_8m0fn"]
+AcceptDialog/constants/buttons_separation = 10
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_tge5m")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31h7o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifkey"]
+radius = 30.0
+
+[node name="Main" type="Node"]
+script = ExtResource("1_3ajbx")
+ball_Scene = ExtResource("2_l70v6")
+Expanded_Ball_Scene = ExtResource("3_bstip")
+
+[node name="GUI" type="Node" parent="."]
+
+[node name="PlayerOneIcon" type="Panel" parent="GUI"]
+z_index = 3
+offset_left = 1335.0
+offset_top = 135.0
+offset_right = 1535.0
+offset_bottom = 335.0
+theme = SubResource("Theme_6wp42")
+theme_override_styles/panel = SubResource("StyleBoxFlat_vk6cr")
+
+[node name="PlayerTwoIcon" type="Panel" parent="GUI"]
+z_index = 3
+offset_left = 1665.0
+offset_top = 136.0
+offset_right = 1865.0
+offset_bottom = 336.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lcpgm")
+
+[node name="PlayerTwoBallWell" type="Panel" parent="GUI"]
+z_index = 4
+z_as_relative = false
+offset_left = 1865.0
+offset_top = 208.0
+offset_right = 2331.0
+offset_bottom = 331.0
+theme = SubResource("Theme_jcvxf")
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0tm8")
+
+[node name="BallWellTexture" type="Sprite2D" parent="GUI/PlayerTwoBallWell"]
+position = Vector2(232, 62)
+scale = Vector2(5, 5)
+texture = ExtResource("4_uabbj")
+
+[node name="PlayerOneBallWell" type="Panel" parent="GUI"]
+z_index = 4
+z_as_relative = false
+texture_filter = 1
+offset_left = 872.0
+offset_top = 216.0
+offset_right = 1335.0
+offset_bottom = 337.0
+theme = SubResource("Theme_8m0fn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_31h7o")
+
+[node name="BallWellTexture" type="Sprite2D" parent="GUI/PlayerOneBallWell"]
+position = Vector2(233, 62)
+scale = Vector2(5, 5)
+texture = ExtResource("4_uabbj")
+
+[node name="TextDisplay1" type="RichTextLabel" parent="GUI"]
+z_index = 3
+anchors_preset = -1
+anchor_left = 0.157
+anchor_top = 0.881
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = 1.59998
+offset_top = 0.199924
+offset_right = -1.20009
+offset_bottom = -3.0
+theme_override_font_sizes/normal_font_size = 50
+scroll_active = false
+script = ExtResource("5_k2qs3")
+
+[node name="Table" parent="." instance=ExtResource("1_sygpi")]
+light_mask = 1
+visibility_layer = 1
+
+[node name="Cue" parent="." instance=ExtResource("4_v43l0")]
+
+[node name="PowerSlider" parent="." instance=ExtResource("5_4dt66")]
+z_index = 3
+offset_left = -11.0
+offset_top = 513.0
+offset_right = 441.0
+offset_bottom = 1326.0
+
+[node name="GuidingLine" type="Line2D" parent="."]
+light_mask = 0
+z_index = 2
+z_as_relative = false
+position = Vector2(1, -18)
+points = PackedVector2Array(-1, 18)
+width = 5.0
+script = ExtResource("6_gkdx0")
+
+[node name="RayCast2D" type="ShapeCast2D" parent="GuidingLine"]
+visibility_layer = 256
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("CircleShape2D_ifkey")
+target_position = Vector2(2.08165e-12, 2.08165e-12)
+collide_with_areas = true
+
+[node name="AimingBall" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1, -37)
+scale = Vector2(5, 5)
+texture = ExtResource("9_yorn8")
+
+[node name="GhostTable" parent="." instance=ExtResource("1_sygpi")]
+position = Vector2(-10008, 335)
+
+[node name="BACKROUND" type="Sprite2D" parent="."]
+position = Vector2(1607, 904)
+scale = Vector2(5, 5)
+texture = ExtResource("10_sxed4")
+
+[connection signal="direction" from="Cue" to="." method="_on_cue_direction"]
+[connection signal="powerChanged" from="Cue" to="." method="_on_cue_power_changed"]
+[connection signal="shoot" from="Cue" to="." method="_on_cue_shoot"]

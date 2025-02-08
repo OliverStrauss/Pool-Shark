@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1osoibj01qu1"]
+
+[ext_resource type="Script" path="res://scenes/pool_ball.gd" id="1_trm2k"]
+[ext_resource type="Texture2D" uid="uid://dpjoeao8l1dwb" path="res://IMAGES/BALLS/newerBalls/ball1.png" id="2_eijhi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrefn"]
+friction = 4.0
+bounce = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sbxo"]
+radius = 34.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptx81"]
+radius = 7.4
+
+[node name="Pool_Ball" type="RigidBody2D" groups=["RegularBalls"]]
+z_index = 2
+z_as_relative = false
+physics_material_override = SubResource("PhysicsMaterial_xrefn")
+script = ExtResource("1_trm2k")
+
+[node name="RegSprite" type="Sprite2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+texture_filter = 1
+position = Vector2(-0.400001, -0.4)
+scale = Vector2(5, 5)
+texture = ExtResource("2_eijhi")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="CollisonChecker" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5sbxo")
+
+[node name="RegBall" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1.19209e-07)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ptx81")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

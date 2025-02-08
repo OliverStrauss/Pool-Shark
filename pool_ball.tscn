@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca6hnj8bb0y1s"]
+
+[ext_resource type="Texture2D" uid="uid://d27nryvxywcu1" path="res://IMAGES/BALLS/newBalls/ball2.png" id="1_oa7pa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l2wa2"]
+bounce = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptx81"]
+radius = 6.03692
+
+[node name="Pool Ball" type="RigidBody2D" groups=["RegularBalls"]]
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_l2wa2")
+
+[node name="RegBall" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_ptx81")
+
+[node name="RegSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_oa7pa")
